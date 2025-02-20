@@ -1,0 +1,33 @@
+# Dependências do Node.js
+node_modules/
+package-lock.json
+npm-debug.log
+yarn.lock
+pnpm-lock.yaml
+
+# Diretórios de build/transpilação
+dist/
+build/
+out/
+
+# Arquivos de configuração do ambiente
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs e relatórios
+*.log
+yarn-debug.log*
+yarn-error.log*
+npm-debug.log*
+lerna-debug.log*
+coverage/
+
+# Configurações de editores e sistemas
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
