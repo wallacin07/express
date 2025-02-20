@@ -11,7 +11,7 @@ export class AddNewTodoItemComponent {
 
     isModalOpen = false
 
-    constructor(private service: TodoServiceService){}
+    // constructor(private service: TodoServiceService){}
 
     closeModal(){
       this.isModalOpen = false
@@ -21,7 +21,7 @@ export class AddNewTodoItemComponent {
       this.isModalOpen = true
     }
 
-    addTask(description: string , completed: boolean){
-      this.service.post(description,completed)
-    }
+    // addTask(description: string , completed: boolean){
+    //   this.service.post(description,completed)
+    // }
 }

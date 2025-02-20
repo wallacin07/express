@@ -1,0 +1,35 @@
+
+  <div class="table-container">
+    <table class="custom-table">
+      <thead class="custom-thead">
+        <tr>
+          <th scope="col" class="custom-th">#</th>
+          <th scope="col" class="custom-th">Descrição</th>
+          <th scope="col" class="custom-th">Status</th>
+          <th scope="col" class="custom-th"></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of ((TodoList| async)?.todoList); track $index) {
+
+          <tr class="custom-tr">
+            <th scope="row" class="custom-row-th">{{item.id}}</th>
+            <td class="custom-td">{{item.description}}</td>
+            <td class="custom-td">
+
+              @if (item.completed) {
+              <span class="badge-green">Completed</span>
+            }
+            @else {
+              <span class="badge-red">Uncompleted</span>
+            }
+            </td>
+            <td class="custom-td">
+              <!-- <a href="#" class="custom-link">Edit</a> -->
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
