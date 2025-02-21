@@ -28,6 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 .modal-inner {
@@ -150,4 +151,9 @@
   clip: rect(0,0,0,0);
   white-space: nowrap;
   border: 0;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
 }

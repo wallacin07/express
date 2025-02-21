@@ -18,11 +18,17 @@
           </button>
         </div>
         <div class="modal-body">
-          <!-- ... conteúdo ... -->
+         <div class="flex-row">
+          <input pInputText [(ngModel)]="newTaskDescription" type="text" placeholder="Descrição" />
+          <div class="flex-row">
+            <input id="sla" [(ngModel)]="completed" type="checkbox" placeholder="Completed" />
+            <label for="sla">Completed</label>
+          </div>
+         </div>
         </div>
         <div class="modal-footer">
           <!-- Adicione (click) para fechar nos botões -->
-          <button type="button" class="modal-accept-btn" (click)="closeModal()">I accept</button>
+          <button type="button" class="modal-accept-btn" (click)="addTask(newTaskDescription,completed)">Adicionar todo-Item</button>
           <button type="button" class="modal-decline-btn" (click)="closeModal()">Decline</button>
         </div>
       </div>

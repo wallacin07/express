@@ -4,14 +4,14 @@ import { Observable } from 'rxjs';
 import { todo } from './model/todo';
 
 
-export interface todoList{
-  todoList: todo[]
+export interface TodoItem {
+  _id?: string;
+  description: string;
+  completed: boolean;
+  __v?: number;
 }
 
-export interface todoItem{
-  description: string,
-  completed: boolean
-}
+export type TodoList = TodoItem[];
 
 @Injectable({
   providedIn: 'root'
@@ -22,19 +22,20 @@ export interface todoItem{
 export class TodoServiceService {
 
 
-  private apiUrl = "http://localhost:8080";
+  private apiUrl = "http://localhost:8080/";
 
   constructor(private client: HttpClient) { }
 
-  get() : Observable<todoList>{
-    return this.client.get<todoList>(this.apiUrl)
+  get() : Observable<TodoList>{
+    return this.client.get<TodoList>(this.apiUrl+ "todoList")
   }
 
-  post(description: string, completed: boolean): Observable<string> {
-    const newTodo: todoItem = {
+  post(description: string, completed: boolean) {
+    const newTodo: TodoItem = {
       description: description,
       completed: completed
     };
-    return this.client.post<string>(this.apiUrl,newTodo)
+    console.log(newTodo)
+    this.client.post(this.apiUrl + "todoList",newTodo).subscribe(res => console.log(res))
   }
 }

@@ -10,10 +10,9 @@
         </tr>
       </thead>
       <tbody>
-        @for (item of ((TodoList| async)?.todoList); track $index) {
-
+        @for (item of TodoList; track item._id) {
           <tr class="custom-tr">
-            <th scope="row" class="custom-row-th">{{item.id}}</th>
+            <th scope="row" class="custom-row-th">{{item._id}}</th>
             <td class="custom-td">{{item.description}}</td>
             <td class="custom-td">
 
@@ -25,7 +24,6 @@
             }
             </td>
             <td class="custom-td">
-              <!-- <a href="#" class="custom-link">Edit</a> -->
             </td>
           </tr>
         }
