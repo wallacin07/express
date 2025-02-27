@@ -11,12 +11,14 @@ dotenv.config();
 
 class AuthController {
   static register = async (req: Request, res: Response): Promise<any> => {
-    console.log(process.env.SECRET);
+
     const { name, email, password } = req.body;
+
     const passwordCrypt = CryptoJS.AES.encrypt(
       password,
       process.env.SECRET as string
     ).toString();
+    
     const user = new User({
       name,
       email,
